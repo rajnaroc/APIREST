@@ -12,10 +12,10 @@ app.config["MONGO_URI"] = "mongodb+srv://rajnaroc:12345@cluster0.r5gm8.mongodb.n
 mongo = PyMongo(app)
 
 # Configuración de MySQL (añade los valores correctos)
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "1234567890"
-app.config["MYSQL_DB"] = "flask_sql"
+app.config["MYSQL_HOST"] = "b68fttvw3vrzskmx10ds-mysql.services.clever-cloud.com"
+app.config["MYSQL_USER"] = "usrftefhmotkb5ao"
+app.config["MYSQL_PASSWORD"] = "KRYZo60SCwVTgcYoijxx"
+app.config["MYSQL_DB"] = "b68fttvw3vrzskmx10ds"
 
 mysql = MySQL(app)
 
