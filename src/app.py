@@ -58,16 +58,16 @@ def update_sql(id):
 
     cur = mysql.connection.cursor()
     cur.execute("UPDATE users SET nombre = %s, edad = %s, calle = %s, numero = %s WHERE id = %s", (nombre,edad,calle,numero, id))
-    mysql.connection.cursor()
+    mysql.connection.commit()
     
-    return jsonify("actulizado correctamente")
+    return jsonify("actualizado correctamente")
 
 @app.route("/deletesql/<id>", methods=["DELETE"])
 def delete_sql(id):
     cur = mysql.connection.cursor()
-    cur.execute("DELETE * FROM users WHERE id = %s",(id))
-
-    return jsonify({"message" : "delete user {} ".format(id)}),200
+    cur.execute("DELETE FROM users WHERE id = %s",(id,))
+    mysql.connection.commit()
+    return jsonify({"message" : "delete user" + id + "eliminado correctamente"}),200
 
 # Ruta para agregar un usuario a MongoDB
 @app.route("/add", methods=["POST"])
