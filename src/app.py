@@ -47,7 +47,7 @@ def getuser_sql(id):
     cur.execute("SELECT * FROM users WHERE id = %s", (id,)) 
     datos = cur.fetchall()
 
-    return jsonify(datos),202
+    return jsonify(datos),200
 
 @app.route("/updatesql/<id>", methods=["PUT"])
 def update_sql(id):
